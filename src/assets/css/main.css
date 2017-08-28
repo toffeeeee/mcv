@@ -76,7 +76,10 @@ a{
   width: 9.8rem;
   background:rgba(255,255,255,0);
   transition: all .3s ;
+  /*backdropFilter:blur(90px);
+  -webkit-backdropFilter:blur(90px);*/
 }
+
 .black{
     color: black
 }

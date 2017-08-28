@@ -50,13 +50,13 @@ export default{
            var t = document.documentElement.scrollTop || document.body.scrollTop;
            console.log(className);
            if(t>20){
-             ele.style.background = "rgba(255,255,255,1)"
+             ele.style.backdropFilter = "blur(90px)";
              ele.style.borderBottomWidth = "1px"
              ele.style.borderBottomColor = "#ccc"
              ele.style.borderBottomStyle = "solid"
              ele.className = oldClass + className
            }else{
-             ele.style.background ="rgba(255,255,255,0)"
+              ele.style.backdropFilter = "blur(0px)";
              ele.style.borderBottom = "none"
              ele.className = oldClass
            }
