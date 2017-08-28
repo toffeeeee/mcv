@@ -50,6 +50,7 @@ export default{
            var t = document.documentElement.scrollTop || document.body.scrollTop;
            console.log(className);
            if(t>20){
+             ele.style.webkitBackdropFilter = "blur(90px)";
              ele.style.BackdropFilter = "blur(90px)";
              ele.style.borderBottomWidth = "1px"
              ele.style.borderBottomColor = "#ccc"
@@ -57,6 +58,7 @@ export default{
              ele.className = oldClass + className
            }else{
               ele.style.BackdropFilter = "blur(0px)";
+               ele.style.webkitBackdropFilter = "blur(0px)";
              ele.style.borderBottom = "none"
              ele.className = oldClass
            }
