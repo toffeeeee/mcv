@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <transition :name="transitionName">
-      <router-view keep-alive></router-view>
+      <keep-alive>
+        <router-view></router-view>
+      </keep-alive>
     </transition>
   </div>
 </template>
@@ -44,18 +46,18 @@ export default {
   transform:translateX(10rem);
 }*/
 .slide-left-enter-active, .slide-left-leave-active,.slide-right-enter-active, .slide-right-leave-active{
-  transition: all 0.35s ease
+  transition: all .5s cubic-bezier(.55,0,.1,1);
 }
 .slide-left-enter,
  .slide-right-leave-active {
-     opacity: 0;
+     opacity: 1;
     -webkit-transform: translate(100%, 0);
     transform: translate(100%, 0);
 }
 
 .slide-left-leave-active,
 .slide-right-enter {
-     opacity: 0;
+     opacity: 1;
     -webkit-transform: translate(-100%, 0);
     transform: translate(-100% 0);
 }
