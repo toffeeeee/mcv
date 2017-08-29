@@ -19,6 +19,7 @@ export default {
   },
   methods:{
     touchMove () {
+      alert(1)
       var startX = 0
       var startY = 0
         function touchSatrtFunc(evt) {
@@ -77,10 +78,11 @@ export default {
                 }
 
       function bindEvent() {
-                document.addEventListener('touchstart', touchSatrtFunc, false);
-                document.addEventListener('touchmove', touchMoveFunc, false);
-                document.addEventListener('touchend', touchEndFunc, false);
+                body.addEventListener('touchstart', touchSatrtFunc, false);
+                body.addEventListener('touchmove', touchMoveFunc, false);
+                body.addEventListener('touchend', touchEndFunc, false);
             }
+
 
 
     }
