@@ -12,7 +12,24 @@
         <div class="container-content">
           <div class="container-detail">
             <h2>{{detail.name}}</h2>
-            <p align="center" class="motto">{{detail.motto}}<i @click="editMotto" class="iconfont editMotto">&#xe6e8;</i></p>
+            <div align="center" class="motto">
+              <span v-show="nativeMottoShow">{{detail.motto}}</span>
+              <span v-show="editedMottoShow"><input v-focus="detail.motto" type="text" v-model.trim="detail.motto" maxlength="20" /></span>
+              <i
+                @click="editMotto"
+                v-if="nativeMottoShow == true"
+                class="iconfont editMotto"
+              >
+                &#xe6e8;
+              </i>
+              <i
+                @click="editMotto"
+                v-else
+                class="iconfont editMotto"
+              >
+                &#xe778;
+              </i>
+            </div>
             <p class="info"><i class="iconfont">&#xe680;</i>{{detail.qq}}</p>
             <p class="s info"><i class="iconfont">&#xe635;</i><span>{{detail.sex}}</span><span>{{detail.birthday}}</span><span>{{detail.constellation}}</span><span>{{detail.live}}</span></p>
             <p class="line info"><i class="iconfont">&#xe600;</i>{{detail.job}}</p>
@@ -98,8 +115,9 @@
   padding-right: .45rem;
   color:#909090;
 }
-p.motto{
-  color: #9c9c9c
+div.motto{
+  color: #9c9c9c;
+  padding: .15rem 0
 }
 .info{
   display: flex;
@@ -179,6 +197,15 @@ p.tag{
   color: black;
   margin-top: .3rem;
 }
+.motto span{
+  display: inline-block;
+}
+.motto input{
+  border:0;
+  background: #f7f7f7;
+  font-size: .4rem;
+  font-family:PingFangSC-Regular,sans-serif !important;
+}
 </style>
 <script>
 import childHeader from '@/components/childHeader'
@@ -190,6 +217,8 @@ export default {
       isActive:'',
       titleFontColor:'white',
       titleValue:'Mine',
+      nativeMottoShow:true,
+      editedMottoShow:false,
       detail:{
         name:'1iekkas',
         sex:'男',
@@ -229,13 +258,22 @@ export default {
   },
   methods: {
     editMotto () {
-
+        this.nativeMottoShow = !this.nativeMottoShow
+        this.editedMottoShow = !this.editedMottoShow
     }
   },
   watch: {
     '$route' (to, from) {
       let isBack = this.$router.isBack
       console.log(isBack)
+    }
+  },
+  directives: {
+    focus:function(el,value){
+      //console.log(value);
+      if(value){
+        el.focus();
+      }
     }
   }
 }
