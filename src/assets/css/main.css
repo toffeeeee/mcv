@@ -51,6 +51,9 @@ a{
 .container{
   /*margin-top: .5rem;*/
 }
+.mine{
+  height: 100%;
+}
 .wapper{
   position: absolute;
   top: 0;
@@ -88,4 +91,13 @@ a{
 }
 .child-header span{
   font-size: .45rem;
+}
+.edit-container{
+  height: 100%;
+  width: 10rem;
+  background: #f7f7f7;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999
 }

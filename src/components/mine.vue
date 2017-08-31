@@ -14,7 +14,7 @@
             <h2>{{detail.name}}</h2>
             <div align="center" class="motto">
               <span v-show="nativeMottoShow">{{detail.motto}}</span>
-              <span v-show="editedMottoShow"><input v-focus="detail.motto" type="text" v-model.trim="detail.motto" maxlength="20" /></span>
+              <span v-show="editedMottoShow"><input v-focus @blur="blur" type="text" v-model.trim="detail.motto" maxlength="20" /></span>
               <i
                 @click="editMotto"
                 v-if="nativeMottoShow == true"
@@ -56,6 +56,8 @@
         </div>
       </div>
     </div>
+    <!--editTemplate-->
+    <edit-motto></edit-motto>
   </div>
 </template>
 <style scoped>
@@ -209,6 +211,7 @@ p.tag{
 </style>
 <script>
 import childHeader from '@/components/childHeader'
+import editMotto from '@/components/editMotto'
 export default {
   name: 'hello',
   data () {
@@ -251,7 +254,8 @@ export default {
     }
   },
   components:{
-    childHeader:childHeader
+    childHeader:childHeader,
+    editMotto:editMotto
   },
   mounted(){
 
@@ -260,6 +264,20 @@ export default {
     editMotto () {
         this.nativeMottoShow = !this.nativeMottoShow
         this.editedMottoShow = !this.editedMottoShow
+        console.log(this.nativeMottoShow)
+        console.log(this.editedMottoShow)
+    },
+    blur () {
+      this.nativeMottoShow = true
+      this.editedMottoShow = false
+      event.currentTarget.blur();
+    },
+    cblur () {
+      this.nativeMottoShow = true
+      this.editedMottoShow = false
+      console.log(this.nativeMottoShow)
+      console.log(this.editedMottoShow)
+
     }
   },
   watch: {
@@ -274,7 +292,8 @@ export default {
       if(value){
         el.focus();
       }
-    }
+    },
+
   }
 }
 </script>
