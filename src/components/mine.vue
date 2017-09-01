@@ -13,22 +13,8 @@
           <div class="container-detail">
             <h2>{{detail.name}}</h2>
             <div align="center" class="motto">
-              <span v-show="nativeMottoShow">{{detail.motto}}</span>
-              <span v-show="editedMottoShow"><input v-focus @blur="blur" type="text" v-model.trim="detail.motto" maxlength="20" /></span>
-              <i
-                @click="editMotto"
-                v-if="nativeMottoShow == true"
-                class="iconfont editMotto"
-              >
-                &#xe6e8;
-              </i>
-              <i
-                @click="editMotto"
-                v-else
-                class="iconfont editMotto"
-              >
-                &#xe778;
-              </i>
+              <span>{{detail.motto}}</span>
+              <i @click="showEditTemplate" class="iconfont editMotto">&#xe6e8;</i>
             </div>
             <p class="info"><i class="iconfont">&#xe680;</i>{{detail.qq}}</p>
             <p class="s info"><i class="iconfont">&#xe635;</i><span>{{detail.sex}}</span><span>{{detail.birthday}}</span><span>{{detail.constellation}}</span><span>{{detail.live}}</span></p>
@@ -57,7 +43,9 @@
       </div>
     </div>
     <!--editTemplate-->
-    <edit-motto></edit-motto>
+    <div id="edit-template-container">
+      <edit-motto v-show="editTemplateShow" @getEditTemplateShowVal="getEditTemplateShowVal"></edit-motto>
+    </div>
   </div>
 </template>
 <style scoped>
@@ -222,6 +210,7 @@ export default {
       titleValue:'Mine',
       nativeMottoShow:true,
       editedMottoShow:false,
+      editTemplateShow:false,
       detail:{
         name:'1iekkas',
         sex:'男',
@@ -253,6 +242,7 @@ export default {
     ]
     }
   },
+  props:['getEditTemplateShow'],
   components:{
     childHeader:childHeader,
     editMotto:editMotto
@@ -267,6 +257,15 @@ export default {
         console.log(this.nativeMottoShow)
         console.log(this.editedMottoShow)
     },
+    showEditTemplate () {
+      const elem = document.getElementById('edit-template-container');
+      this.editTemplateShow = !this.editTemplateShow
+      if(this.editTemplateShow){
+        elem.className = 'show'
+      }else{
+        elem.className = 'hide'
+      }
+    },
     blur () {
       this.nativeMottoShow = true
       this.editedMottoShow = false
@@ -278,6 +277,9 @@ export default {
       console.log(this.nativeMottoShow)
       console.log(this.editedMottoShow)
 
+    },
+    getEditTemplateShowVal (data) {
+      this.editTemplateShow = data
     }
   },
   watch: {

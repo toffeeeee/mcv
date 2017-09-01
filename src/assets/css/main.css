@@ -32,6 +32,12 @@ h2{
   color: #5B9EE4;
   font-family:PingFangSC-Regular,sans-serif !important;
 }
+input{
+  border:0;
+  width: 9.1rem;
+  padding: 0 .45rem;
+  height: .75rem;
+}
 #app {
   font-family:PingFangSC-Regular,sans-serif !important;
   -webkit-font-smoothing: antialiased;
@@ -96,7 +102,7 @@ a{
   height: 100%;
   width: 10rem;
   background: #f7f7f7;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 999
