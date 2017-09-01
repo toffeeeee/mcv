@@ -36,7 +36,9 @@ input{
   border:0;
   width: 9.1rem;
   padding: 0 .45rem;
-  height: .75rem;
+  height: 1.25rem;
+  border-radius: 0;
+  font-size: .5rem
 }
 #app {
   font-family:PingFangSC-Regular,sans-serif !important;

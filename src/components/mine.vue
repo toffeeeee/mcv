@@ -44,7 +44,11 @@
     </div>
     <!--editTemplate-->
     <div id="edit-template-container">
-      <edit-motto v-show="editTemplateShow" @getEditTemplateShowVal="getEditTemplateShowVal"></edit-motto>
+      <edit-motto ref="edit"
+        v-show="editTemplateShow"
+        @getEditTemplateShowVal="getEditTemplateShowVal"
+        :isActive="ifShow"
+        ></edit-motto>
     </div>
   </div>
 </template>
@@ -208,9 +212,8 @@ export default {
       isActive:'',
       titleFontColor:'white',
       titleValue:'Mine',
-      nativeMottoShow:true,
-      editedMottoShow:false,
       editTemplateShow:false,
+      ifShow:true,
       detail:{
         name:'1iekkas',
         sex:'男',
@@ -242,7 +245,6 @@ export default {
     ]
     }
   },
-  props:['getEditTemplateShow'],
   components:{
     childHeader:childHeader,
     editMotto:editMotto
@@ -262,6 +264,7 @@ export default {
       this.editTemplateShow = !this.editTemplateShow
       if(this.editTemplateShow){
         elem.className = 'show'
+        this.$refs.edit.getActive();
       }else{
         elem.className = 'hide'
       }

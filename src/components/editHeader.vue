@@ -1,7 +1,7 @@
 <template>
   <div class="edit-header">
     <span @click="postEditTemplateShow">取消</span>
-    <span>设置名字</span>
+    <span>修改签名</span>
     <span>完成</span>
   </div>
 </template>
@@ -9,7 +9,7 @@
 export default {
   data () {
     return {
-      editTemplateShow:false
+      editTemplateShow:false,
     }
   },
   methods:{
