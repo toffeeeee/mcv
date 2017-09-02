@@ -1,33 +1,45 @@
 <template>
   <transition :name='transitionName'>
     <div class="edit-container" @touchmove.prevent @mousewheel.prevent>
-    <edit-header @getEditTemplateShow="getEditTemplateShow"></edit-header>
-      <input type="text" maxlength="15" />
+      <div class="edit-header">
+        <span  @click="postEditTemplateShow">取消</span>
+        <span>修改签名</span>
+        <span @click="postEdit">完成</span>
+      </div>
+      <input type="text" maxlength="15" v-model="postData.value" />
     </div>
   </transition>
 </template>
 <script>
-import editHeader from '@/components/editHeader'
 export default {
   data () {
     return {
       transitionName:'slide-top',
       active:null,
+      postData:{
+        editTemplateShow:false,
+        value:''
+      }
     }
   },
-  //props:['isActive'],
+  props:['mottoValue'],
   methods: {
     getActive () {
       this.transitionName = 'slide-top'
+      this.postData.value = this.mottoValue
     },
-    getEditTemplateShow (data) {
+    postEdit () {
+      this.transitionName = 'slide-down'
+      this.$emit('postEditValue',this.postData)
+    },
+    postEditTemplateShow () {
       //console.log(data)
       this.transitionName = 'slide-down'
-      this.$emit('getEditTemplateShowVal',data)
-    }
+      this.$emit('getEditTemplateShowVal',this.postData)
+    },
   },
   components:{
-    editHeader:editHeader
+
   },
 }
 </script>

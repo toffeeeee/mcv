@@ -109,3 +109,19 @@ a{
   left: 0;
   z-index: 999
 }
+.edit-header {
+  background: #222;
+  color: white;
+  padding: .25rem 0;
+  margin-bottom: .35rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.edit-header span{
+  width: 1rem;
+}
+.edit-header span:nth-child(2) {
+  width: 8rem;
+  font-size: .45rem
+}

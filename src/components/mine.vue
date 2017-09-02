@@ -46,8 +46,9 @@
     <div id="edit-template-container">
       <edit-motto ref="edit"
         v-show="editTemplateShow"
+        @postEditValue="postEditValue"
         @getEditTemplateShowVal="getEditTemplateShowVal"
-        :isActive="ifShow"
+        :mottoValue="detail.motto"
         ></edit-motto>
     </div>
   </div>
@@ -264,7 +265,7 @@ export default {
       this.editTemplateShow = !this.editTemplateShow
       if(this.editTemplateShow){
         elem.className = 'show'
-        this.$refs.edit.getActive();
+        this.$refs.edit.getActive()
       }else{
         elem.className = 'hide'
       }
@@ -282,7 +283,20 @@ export default {
 
     },
     getEditTemplateShowVal (data) {
-      this.editTemplateShow = data
+      this.editTemplateShow = data.editTemplateShow
+      //console.log(data)
+    },
+    postEditValue (data) {
+        this.editTemplateShow = data.editTemplateShow
+        const newMotto = data.value
+        //console.log(data)
+        if(newMotto==this.detail.motto){
+          return false
+        }else if(newMotto==''){
+          this.detail.motto = 'Motto null...'
+        }else{
+          this.detail.motto = newMotto
+        }
     }
   },
   watch: {
