@@ -4,7 +4,7 @@
       <child-header   :titleFontColor="titleFontColor" :titleValue="titleValue"></child-header>
       <div class="container">
         <div class="container-header">
-          <img src="http://i2.bvimg.com/605992/c061eb2e3b622cbc.jpg" width="100%">
+          <img src="https://s1.imgchr.com/2017/09/11/nAkfs.jpg" width="100%">
         </div>
         <div class="container-author">
           <img src="../assets/avatar.jpg" />
@@ -110,8 +110,8 @@
   padding-right: .45rem;
   color:#909090;
 }
-div.motto{
-  color: #9c9c9c;
+div.motto span{
+  color: #777 !important;
   padding: .15rem 0
 }
 .info{
