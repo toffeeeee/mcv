@@ -35,7 +35,7 @@ h2{
 input{
   border:0;
   width: 9.1rem;
-  padding: 0 .45rem;
+  padding: 0 .45rem !important;
   height: 1.25rem;
   border-radius: 0;
   font-size: .5rem

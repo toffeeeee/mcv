@@ -114,7 +114,7 @@
   right:-.35rem
 }
 .container-detail i{
-  font-size: .4rem;
+  font-size: .5rem;
   padding-right: .45rem;
   color:#909090;
 }
@@ -231,7 +231,7 @@ export default {
       editTemplateShow:false,
       ifShow:true,
       detail:{
-        name:'1iekkas',
+        name:'1iekkas❤',
         sex:'男',
         job:'web Front-end',
         qq:'764295062',
@@ -240,7 +240,7 @@ export default {
         education:'广东省佛山市高明区第四中学',
         live:'广东-佛山-禅城',
         call:'1562xx95345',
-        motto:'leave this pleace with me ? ❤',
+        motto:'leave this pleace with me ? ',
         wechat:'liekkasN1ce'
       },
       hobbies:[{
