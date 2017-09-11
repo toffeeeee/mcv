@@ -110,8 +110,8 @@
 }
 .motto i{
   position: absolute;
-  top: .3rem;
-  right:-.2rem
+  top: .35rem;
+  right:-.35rem
 }
 .container-detail i{
   font-size: .4rem;
