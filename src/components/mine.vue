@@ -240,7 +240,7 @@ export default {
         education:'广东省佛山市高明区第四中学',
         live:'广东-佛山-禅城',
         call:'1562xx95345',
-        motto:'can you leave this pleace with me ? ❤',
+        motto:'leave this pleace with me ? ❤',
         wechat:'liekkasN1ce'
       },
       hobbies:[{
