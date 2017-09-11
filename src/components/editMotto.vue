@@ -6,7 +6,7 @@
         <span>修改签名</span>
         <span @click="postEdit">完成</span>
       </div>
-      <input type="text" maxlength="15" v-model="postData.value" />
+      <input type="text" maxlength="30" v-model="postData.value" />
     </div>
   </transition>
 </template>

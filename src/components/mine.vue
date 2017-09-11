@@ -105,6 +105,14 @@
   color: black;
   font-size: .4rem
 }
+.motto{
+  position:relative;
+}
+.motto i{
+  position: absolute;
+  top: .3rem;
+  right:-.2rem
+}
 .container-detail i{
   font-size: .4rem;
   padding-right: .45rem;
@@ -113,7 +121,13 @@
 div.motto span{
   color: #777 !important;
   font-size: .55rem;
-  padding: .15rem 0
+  padding: .15rem 0;
+  width:8rem;
+  word-break:break-all;
+  display:-webkit-box;
+  -webkit-line-clamp:1;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
 }
 .info{
   display: flex;
@@ -226,7 +240,7 @@ export default {
         education:'广东省佛山市高明区第四中学',
         live:'广东-佛山-禅城',
         call:'1562xx95345',
-        motto:'why not?',
+        motto:'can you leave this pleace with me ? ❤',
         wechat:'liekkasN1ce'
       },
       hobbies:[{
