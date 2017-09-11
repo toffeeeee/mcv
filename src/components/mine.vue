@@ -81,7 +81,7 @@
 }
 .container-content h2{
   text-align: center;
-  font-size: .55rem;
+  font-size: .65rem;
   color: black;
   font-weight: 100
 }
@@ -106,12 +106,13 @@
   font-size: .4rem
 }
 .container-detail i{
-  font-size: .6rem;
+  font-size: .4rem;
   padding-right: .45rem;
   color:#909090;
 }
 div.motto span{
   color: #777 !important;
+  font-size: .55rem;
   padding: .15rem 0
 }
 .info{
