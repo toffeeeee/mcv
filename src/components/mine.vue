@@ -110,7 +110,7 @@
 }
 .motto i{
   position: absolute;
-  top: .35rem;
+  top: .3rem;
   right:-.35rem
 }
 .container-detail i{

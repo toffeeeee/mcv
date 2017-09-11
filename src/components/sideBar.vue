@@ -3,7 +3,7 @@
     <div class="shadow">
       <div class="author">
         <img src="../assets/avatar.jpg">
-        <span>1iekkas</span>
+        <span>1iekkas❤</span>
       </div>
       <p class="state">I need some time,please</p>
       <nav>

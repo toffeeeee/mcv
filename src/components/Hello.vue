@@ -26,6 +26,9 @@ img{
   position: relative;
   overflow-x: hidden;
 }
+h1{
+  font-size: .55rem !important;
+}
 </style>
 <script>
 import header from '@/components/header'
@@ -34,7 +37,7 @@ export default {
   name: 'hello',
   data () {
     return {
-      msg: '❤',
+      msg: 'Thanks for coming ❤',
       isActive:''
     }
   },
