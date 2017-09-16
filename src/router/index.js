@@ -10,7 +10,6 @@ Router.prototype.goBack = function () {  //重点，给VueRoute添加一个goBac
 　　window.history.go(-1)
 }
 export default new Router({
-  mode:'history',
   routes: [
     {
       path: '/',
