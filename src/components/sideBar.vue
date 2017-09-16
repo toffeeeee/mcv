@@ -15,6 +15,7 @@
           <li><router-link to="/">home</router-link></li>
           <li><router-link to="/mine">mine</router-link></li>
           <li><router-link to="/experience">experience</router-link></li>
+          <li><router-link to="/music">music</router-link></li>
           <!--<li><router-link to="/call">call me</router-link></li>-->
         </ul>
       </nav>

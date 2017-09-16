@@ -14,8 +14,11 @@ export default {
       transitionName:'slide-left'
     }
   },
+  mounted() {
+
+  },
   methods:{
-  
+
   },
   watch: {
     '$route' (to, from) {

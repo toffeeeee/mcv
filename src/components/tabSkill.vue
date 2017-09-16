@@ -72,7 +72,7 @@
   max-height: 3rem;
 }
 .swiper-container-horizontal > .swiper-pagination-bullets{
-  bottom:0
+  bottom:.08rem
 }
 </style>
 <script>

@@ -3,10 +3,10 @@
     <div class="wapper">
       <child-header :titleFontColor="titleFontColor" :titleValue="titleValue" ></child-header>
       <div class="bg-container">
-      <div class="fixed-bg">
-        <img src="../assets/e-bg.jpg" width="100%" />
+        <div class="fixed-bg">
+          <img src="../assets/e-bg.jpg" width="100%" />
+        </div>
       </div>
-    </div>
       <div class="container">
         <div class="tabBar-container">
           <div class="tab-bar" v-for="(btn,index) in tabList"  v-bind:class="[active == index?'active':'']">

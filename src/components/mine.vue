@@ -24,7 +24,7 @@
             <p class="info"><i class="iconfont">&#xe65c;</i>{{detail.wechat}}</p>
           </div>
           <div class="container-hobby">
-            <h2 class="hobby-title" align="center">兴趣爱好</h2>
+            <h2 class="hobby-title" align="center">Hobbies</h2>
             <div v-for="item in hobbies" class="list">
               <img v-bind:src="item.picUrl" />
               <div>
@@ -34,7 +34,7 @@
             </div>
           </div>
           <div class="container-tag">
-            <h2 class="my-tag-title" align="center">个人标签</h2>
+            <h2 class="my-tag-title" align="center">Tag</h2>
             <div class="tag-wapper">
               <p class="tag">还没有标签</p>
             </div>
@@ -110,7 +110,7 @@
 }
 .motto i{
   position: absolute;
-  top: .3rem;
+  top: .23rem;
   right:-.35rem
 }
 .container-detail i{
