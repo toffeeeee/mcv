@@ -118,6 +118,15 @@ export default {
         detail:'well,this is detail'
       },
       {
+        img:'https://s1.ax1x.com/2017/09/21/MQi79.png',
+        content:'WeChat',
+        Proficiency:[{
+          num:'70%',
+          width:'2.8rem'
+        }],
+        detail:'well,this is detail'
+      },
+      {
         img:'http://storage1.imgchr.com/V5yI1.jpg',
         content:'Git',
         Proficiency:[{

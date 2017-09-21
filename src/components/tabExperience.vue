@@ -7,6 +7,7 @@
     <div v-for="item in list" class="list">
       <div class="content">
         <p class="time"><i class="iconfont">&#xe704;</i>{{item.time}}</p>
+        <p class="company">{{item.company}}</p>
         <p class="text">{{item.content}}</p>
       </div>
     </div>
@@ -50,7 +51,7 @@
   margin-left: .5rem;
   border:1px solid #e0e0e0;
   position: relative;
-  height: 3.6rem;
+  height: 4.1rem;
   border-radius: 3px;
 }
 .experience .content::after,.experience .content::before{
@@ -83,6 +84,12 @@
   padding: .1rem .4rem;
   line-height: .55rem
 }
+.company{
+  text-align: left;
+  padding:.2rem 0 0 .4rem;
+  font-weight: bold;
+  letter-spacing: .05rem
+}
 </style>
 <script>
 export default {
@@ -92,18 +99,22 @@ export default {
       msg: 'Welcome!',
       list:[{
         time:'2016.8 - 2017.10',
+        company:'科拓网络',
         content:'Its about where I am, what I am responsible for, how I do it,Its about where I am, what I am responsible for, how I do it'
       },
       {
         time:'2015.8 - 2016.6',
+        company:'精鹰传媒',
         content:'Its about where I am, what I am responsible for, how I do it,Its about where I am, what I am responsible for, how I do it'
       },
       {
         time:'2013.6 - 2015.6',
+        company:'精鹰传媒',
         content:'Its about where I am, what I am responsible for, how I do it,Its about where I am, what I am responsible for, how I do it'
       }
       ,{
         time:'2016.8 - 2017.10',
+        company:'精鹰传媒',
         content:'Its about where I am, what I am responsible for, how I do it,Its about where I am, what I am responsible for, how I do it'
       }
     ],

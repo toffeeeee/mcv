@@ -4,7 +4,7 @@
       <child-header   :titleFontColor="titleFontColor" :titleValue="titleValue"></child-header>
       <div class="container">
         <div class="container-header">
-          <img src="https://s1.imgchr.com/2017/09/11/nAkfs.jpg" width="100%">
+          <img src="https://s1.ax1x.com/2017/09/11/nAkfs.jpg" width="100%">
         </div>
         <div class="container-author">
           <img src="../assets/avatar.jpg" />

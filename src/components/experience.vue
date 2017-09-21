@@ -13,7 +13,7 @@
             <span @click="toggleTabs(btn.content,index)">{{btn.content}}</span>
           </div>
         </div>
-        <skill :is="currentView" keep-alive></skill>
+        <skill :is="currentView"></skill>
       </div>
     </div>
   </div>

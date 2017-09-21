@@ -5,14 +5,14 @@
       <div class="bg-container">
         <div class="fixed-bg">
           <div class="backdrop"></div>
-          <img v-bind:src="playlist.coverImgUrl" width="150%" />
+          <img src="http://p1.music.126.net/239_sRSLJSXBFUFKPAQ0KQ==/109951162856928419.jpg" width="150%" />
           <div class="list-content">
             <div>
-              <img v-bind:src="playlist.coverImgUrl" width="100%" />
+              <img src="http://p1.music.126.net/239_sRSLJSXBFUFKPAQ0KQ==/109951162856928419.jpg" width="100%" />
             </div>
             <div class="author">
-              <p>{{playlist.name}}</p>
-              <p>鱼塘大亨1iekkas</p>
+              <p>如若梦似彩虹</p>
+              <p class="info"><img src="http://p1.music.126.net/_xavr5yW7UojLp7djgHzrA==/109951163028214313.jpg" /><span>鱼塘大亨1iekkas</span></p>
             </div>
 
           </div>
@@ -32,7 +32,7 @@
 .fixed-bg{
     -webkit-filter:blur(0px);
     height: 7rem;
-    overflow-y: hidden;
+    overflow: hidden;
     position: relative;
 }
 .backdrop{
@@ -76,6 +76,19 @@
 .author p:nth-child(2){
   font-size: .4rem
 }
+.info{
+  display: flex;
+  align-items: center;
+  margin-top: .55rem
+}
+.info span{
+  opacity: .75
+}
+.info img{
+  width: 1rem;
+  border-radius: 50%;
+  margin-right: .25rem
+}
 </style>
 <script>
 import childHeader from '@/components/childHeader'
@@ -85,7 +98,9 @@ export default {
     return {
       titleFontColor:'white',
       titleValue:'Music',
-      playlist:'',
+      playlist:[{
+        coverImgUrl:'',
+      }],
       privileges:''
     }
   },
