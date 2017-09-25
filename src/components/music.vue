@@ -115,8 +115,8 @@
 }
 .play-all p,.item div{
   text-align: left;
-  font-size: .45rem;
-  padding: .25rem 0
+  font-size: .55rem;
+  padding: .35rem 0;
 }
 .item div{
   padding: .25rem 0
@@ -127,6 +127,7 @@
 }
 .play-all p:first-child,.item div:first-child{
   width: 1.35rem;
+  padding-right: 0.1rem;
   text-align: center;
 }
 .item div:first-child{
@@ -137,12 +138,15 @@
   font-weight: bold
 }
 .detail p:nth-child(2){
-  font-size: .35rem;
+  font-size: .4rem;
   color: #8c8c8c
 }
 .play-all p:nth-child(2),.item div:nth-child(2){
   width: 9rem;
-  border-bottom: 1px solid #ccc
+  border-bottom: 1px solid #ccc;
+}
+.play-all p:nth-child(2){
+  font-weight: bold;
 }
 </style>
 <script>
