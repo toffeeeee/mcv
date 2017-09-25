@@ -133,16 +133,14 @@
 .item div:first-child{
   color: #797979
 }
-.detail p:first-child{
-  margin-bottom: .05rem;
-}
 .detail p:nth-child(2){
-  font-size: .4rem;
+  font-size: .38rem;
   color: #8c8c8c
 }
 .play-all p:nth-child(2),.item div:nth-child(2){
   width: 9rem;
   border-bottom: 1px solid #ccc;
+  color: black
 }
 
 </style>
