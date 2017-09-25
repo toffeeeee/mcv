@@ -135,7 +135,6 @@
 }
 .detail p:first-child{
   margin-bottom: .05rem;
-  font-weight: bold
 }
 .detail p:nth-child(2){
   font-size: .4rem;
@@ -145,9 +144,7 @@
   width: 9rem;
   border-bottom: 1px solid #ccc;
 }
-.play-all p:nth-child(2){
-  font-weight: bold;
-}
+
 </style>
 <script>
 import childHeader from '@/components/childHeader'
