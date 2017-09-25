@@ -19,6 +19,22 @@
         </div>
 
       </div>
+      <!--background end-->
+      <div class="music-container">
+        <div class="play-all">
+          <p><i class="iconfont">&#xe60d;</i></p>
+          <p>播放全部</p>
+        </div>
+        <div class="music-list">
+          <div v-for="(item,index) in privileges" class="item">
+            <div>{{index + 1}}</div>
+            <div class="detail">
+              <p>{{item.name}}</p>
+              <p>{{item.author}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -89,6 +105,45 @@
   border-radius: 50%;
   margin-right: .25rem
 }
+.music-container{
+  padding: 0 .25rem;
+}
+.play-all,.item{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.play-all p,.item div{
+  text-align: left;
+  font-size: .45rem;
+  padding: .25rem 0
+}
+.item div{
+  padding: .25rem 0
+}
+.play-all p i{
+  font-size: .55rem;
+  vertical-align: bottom;
+}
+.play-all p:first-child,.item div:first-child{
+  width: 1.35rem;
+  text-align: center;
+}
+.item div:first-child{
+  color: #797979
+}
+.detail p:first-child{
+  margin-bottom: .05rem;
+  font-weight: bold
+}
+.detail p:nth-child(2){
+  font-size: .35rem;
+  color: #8c8c8c
+}
+.play-all p:nth-child(2),.item div:nth-child(2){
+  width: 9rem;
+  border-bottom: 1px solid #ccc
+}
 </style>
 <script>
 import childHeader from '@/components/childHeader'
@@ -101,7 +156,27 @@ export default {
       playlist:[{
         coverImgUrl:'',
       }],
-      privileges:''
+      privileges:[{
+        name:'leave this pleace',
+        author:'LIONE - Leave This Place',
+        url:''
+      },
+      {
+        name:'Unbreakable(Original Mix)',
+        author:'Hyper Potions/Danyka Nadeau',
+        url:''
+      },
+      {
+        name:'小半',
+        author:'陈粒',
+        url:''
+      },
+      {
+        name:'All I See',
+        author:'Draper/Laura Brehm - All I See',
+        url:''
+      }
+    ]
     }
   },
   components:{
