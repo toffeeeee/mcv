@@ -125,3 +125,19 @@ a{
   width: 8rem;
   font-size: .45rem
 }
+.slide-left-enter-active, .slide-left-leave-active,.slide-right-enter-active, .slide-right-leave-active{
+  transition: all .5s cubic-bezier(.55,0,.1,1);
+}
+.slide-left-enter,
+ .slide-right-leave-active {
+     opacity: 1;
+    -webkit-transform: translate(100%, 0);
+    transform: translate(100%, 0);
+}
+
+.slide-left-leave-active,
+.slide-right-enter {
+     opacity: 1;
+    -webkit-transform: translate(-100%, 0);
+    transform: translate(-100% 0);
+}

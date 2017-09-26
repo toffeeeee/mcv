@@ -26,7 +26,7 @@
           <p>播放全部</p>
         </div>
         <div class="music-list">
-          <div v-for="(item,index) in privileges" class="item">
+          <div v-for="(item,index) in privileges" class="item" @click="ShowAudio">
             <div>{{index + 1}}</div>
             <div class="detail">
               <p>{{item.name}}</p>
@@ -35,10 +35,29 @@
           </div>
         </div>
       </div>
+      <!--music list end-->
     </div>
+      <div class="audio-container">
+        <play></play>
+      </div>
+    <!--audio end-->
   </div>
 </template>
 <style scoped>
+.music{
+  position: relative;
+  height: 100%;
+}
+.audio-container{
+  position: absolute;
+  top: 0;
+  left: 10rem;
+  height: 100%;
+  background: white;
+  min-width: 10rem;
+  z-index: 999;
+  transition: all .35s;
+}
 .bg-container{
   max-width: 10rem;
   max-height: 8.5rem;
@@ -146,12 +165,14 @@
 </style>
 <script>
 import childHeader from '@/components/childHeader'
+import play from '@/components/play'
 export default {
   name: 'hello',
   data () {
     return {
       titleFontColor:'white',
       titleValue:'Music',
+      transitionName:'slide-left',
       playlist:[{
         coverImgUrl:'',
       }],
@@ -179,12 +200,14 @@ export default {
     }
   },
   components:{
-    childHeader
+    childHeader,
+    play
   },
   mounted(){
     this.login();
   },
   methods: {
+    //
     login:function(){
       var _this = this
       this.$ajax.get('api/login/cellphone?phone=15627795345&password=1iekkas').then(function(res){
@@ -194,7 +217,14 @@ export default {
         _this.playlist = res.data.playlist;
         _this.privileges = res.data.privileges;
       });
+    },
+
+    //
+    ShowAudio:function(){
+      var elem = document.getElementsByClassName('audio-container')[0];
+      elem.style.left = 0;
     }
+
   }
 }
 </script>

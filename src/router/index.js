@@ -4,6 +4,7 @@ import Hello from '@/components/Hello'
 import Mine from '@/components/mine'
 import Experience from '@/components/experience'
 import Music from '@/components/music'
+/*import Play from '@/components/play'*/
 Vue.use(Router)
 Router.prototype.goBack = function () {  //重点，给VueRoute添加一个goBack方法，用于记录路由的前进后退状态 this.isBack = true
 　　this.isBack = true
@@ -30,6 +31,11 @@ export default new Router({
       path: '/music',
       name: 'music',
       component: Music
-    }
+    }/*,
+    {
+      path: '/play',
+      name: 'play',
+      component: Play
+    }*/
   ]
 })
