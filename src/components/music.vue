@@ -26,7 +26,8 @@
           <p>播放全部</p>
         </div>
         <div class="music-list">
-          <div v-for="(item,index) in privileges" class="item" @click="ShowAudio">
+          <div  v-for="(item,index) in privileges" class="item"
+           @click="ShowAudio(item.url,item.name,item.author)">
             <div>{{index + 1}}</div>
             <div class="detail">
               <p>{{item.name}}</p>
@@ -38,7 +39,7 @@
       <!--music list end-->
     </div>
       <div class="audio-container">
-        <play></play>
+        <play :url='activeUrl' :name='activeName' :author='activeAuthor'></play>
       </div>
     <!--audio end-->
   </div>
@@ -166,6 +167,7 @@
 <script>
 import childHeader from '@/components/childHeader'
 import play from '@/components/play'
+import leave from '@/assets/music/leave.mp3'
 export default {
   name: 'hello',
   data () {
@@ -173,13 +175,16 @@ export default {
       titleFontColor:'white',
       titleValue:'Music',
       transitionName:'slide-left',
+      activeUrl:'',
+      activeName:'',
+      activeAuthor:'',
       playlist:[{
         coverImgUrl:'',
       }],
       privileges:[{
         name:'leave this pleace',
         author:'LIONE - Leave This Place',
-        url:''
+        url:leave
       },
       {
         name:'Unbreakable(Original Mix)',
@@ -204,7 +209,8 @@ export default {
     play
   },
   mounted(){
-    this.login();
+    /*this.login();*/
+
   },
   methods: {
     //
@@ -220,10 +226,19 @@ export default {
     },
 
     //
-    ShowAudio:function(){
+    ShowAudio:function(url,name,author){
       var elem = document.getElementsByClassName('audio-container')[0];
+      var url = url;
+      var author = author;
+      var name = name;
+      this.activeUrl = url ;
+      this.activeName = name ;
+      this.activeAuthor = author ;
       elem.style.left = 0;
-    }
+    },
+    
+    //
+
 
   }
 }
