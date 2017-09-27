@@ -1,5 +1,5 @@
 <template>
-    <div class="audio" @touchmove.prevent>
+    <div class="audio" >
       <header>
         <span @click="hideAudio" class="iconfont">&#xe697;</span>
         <span>{{name}}</span>

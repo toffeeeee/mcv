@@ -38,7 +38,7 @@
       </div>
       <!--music list end-->
     </div>
-      <div class="audio-container">
+      <div class="audio-container" @touchmove.prevent>
         <play :url='activeUrl' :name='activeName' :author='activeAuthor'></play>
       </div>
     <!--audio end-->
