@@ -48,6 +48,7 @@
 .music{
   position: relative;
   height: 100%;
+  overflow-x: hidden;
 }
 .audio-container{
   position: absolute;
@@ -236,7 +237,7 @@ export default {
       this.activeAuthor = author ;
       elem.style.left = 0;
     },
-    
+
     //
 
 
