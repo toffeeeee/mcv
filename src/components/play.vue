@@ -229,6 +229,7 @@ import leave from '@/assets/music/leave.mp3'
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: -2.5rem;
 }
 .cover img{
   width: 4.22rem;
