@@ -22,7 +22,7 @@
         <div class="showTime">
           <p id="starTime">0:00</p>
     			<p id="line"><span class="activeLine"></span></p>
-          <p id="endTime"></p>
+          <p id="endTime">0:00</p>
           <audio v-bind:src="privileges[activeIndex].url"  @canplay="changeTime" @timeupdate="activeTime" id="audio">
             <source src="song.ogg" type="audio/ogg">
             <source src="song.m4a" type="audio/mpeg">
@@ -30,8 +30,10 @@
           </audio>
         </div>
         <div class="btnControl">
-          <span v-if="isPlay == true " @click="playAudio" class="iconfont">&#xe608;</span>
-          <span v-else @click="playAudio" class="iconfont">&#xe60d;</span>
+          <span class="iconfont switch">&#xe602;</span>
+          <span v-if="isPlay == true " @click="playAudio" class="iconfont playBtn">&#xe608;</span>
+          <span v-else @click="playAudio" class="iconfont playBtn">&#xe60d;</span>
+          <span class="iconfont switch">&#xe602;</span>
         </div>
       </div>
     </div>
@@ -157,9 +159,25 @@ import leave from '@/assets/music/leave.mp3'
   width: 10rem;
   z-index: -1
 }
+.btnControl{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .btnControl .iconfont{
   color: white;
-  font-size: 1.25rem
+  font-size: 1.25rem;
+}
+.btnControl span:first-child{
+  transform: rotate(180deg);
+}
+.btnControl .switch{
+  width: 2rem;
+  text-align: center;
+}
+.btnControl .playBtn{
+  text-align: center;
+  width: 3rem
 }
 .audio header{
   width: 9.8rem;
@@ -232,13 +250,13 @@ import leave from '@/assets/music/leave.mp3'
 }
 #line{
   width: 7rem;
-  height: .08rem;
+  height: .05rem;
   background: rgba(211,211,211,.5);
   border-radius: 1px;
 }
 .activeLine{
-  height: .08rem;
-  background:#f14b4b;
+  height: .05rem;
+  background:#d33a31;
   display: block;
   border-radius: 1px;
   width: 0;
