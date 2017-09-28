@@ -4,8 +4,8 @@
         <img class="activeImg" src="https://s1.ax1x.com/2017/09/28/lof6H.jpg" />
         <div class="shadow"></div>
         <div class="cover-container">
-          <div class="cover">
-            <img src="https://s1.ax1x.com/2017/09/28/l7EPf.png" width="100%"/>
+          <div class="cover" v-bind:class="{rotate:isPlay}">
+            <img src="https://s1.ax1x.com/2017/09/28/lof6H.jpg"/>
           </div>
         </div>
       </div>
@@ -30,7 +30,8 @@
           </audio>
         </div>
         <div class="btnControl">
-          <span @click="playAudio" class="iconfont">&#xe608;</span>
+          <span v-if="isPlay == true " @click="playAudio" class="iconfont">&#xe608;</span>
+          <span v-else @click="playAudio" class="iconfont">&#xe60d;</span>
         </div>
       </div>
     </div>
@@ -41,7 +42,7 @@ import leave from '@/assets/music/leave.mp3'
     data () {
       return {
         transitionName:'slide-left',
-        isPlay:'',
+        isPlay:false,
         activeImg:{
           background:'url(https://s1.ax1x.com/2017/09/28/lof6H.jpg) no-repeat',
           backgroundSize:'200%',
@@ -118,12 +119,14 @@ import leave from '@/assets/music/leave.mp3'
       //开始播放
       play:function () {
         var audio =document.querySelector('#audio');
+        this.isPlay = true ;
         audio.play();
       },
 
       //暂停播放
       pause:function () {
         var audio =document.querySelector('#audio');
+        this.isPlay = false ;
         audio.pause();
       }
     },
@@ -141,7 +144,7 @@ import leave from '@/assets/music/leave.mp3'
   backdrop-filter: blur(130px);
 }
 .control{
-  position: fixed;
+  position: absolute;
   bottom:0;
   left: 0;
   padding: .5rem 0
@@ -155,11 +158,12 @@ import leave from '@/assets/music/leave.mp3'
   z-index: -1
 }
 .btnControl .iconfont{
-  color: white
+  color: white;
+  font-size: 1.25rem
 }
 .audio header{
   width: 9.8rem;
-  padding: .35rem .1rem;
+  padding: .5rem .1rem;
   text-align: left;
   font-size: .45rem ;
   /*color: white;*/
@@ -200,13 +204,31 @@ import leave from '@/assets/music/leave.mp3'
   align-items: center;
 }
 .cover{
-  width: 6.5rem
+  width: 6.5rem;
+  height: 6.5rem;
+  background: url(https://s1.ax1x.com/2017/09/28/l7EPf.png) no-repeat;
+  background-size:  100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cover img{
+  width: 4.22rem;
+  border-radius: 50%;
+}
+.rotate{
+  -webkit-animation:circle 25s infinite linear;
+}
+@-webkit-keyframes circle{
+0%{ transform:rotate(0deg); }
+100%{ transform:rotate(360deg); }
 }
 .showTime{
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: .35rem 0
+  padding: .35rem 0;
+  color: white
 }
 #line{
   width: 7rem;
