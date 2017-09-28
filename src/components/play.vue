@@ -230,6 +230,8 @@ import leave from '@/assets/music/leave.mp3'
   justify-content: center;
   align-items: center;
   margin-top: -2.5rem;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0.3rem rgba(255,255,255,.08);
 }
 .cover img{
   width: 4.22rem;
