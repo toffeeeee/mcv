@@ -1,11 +1,21 @@
 <template>
-    <div class="audio" >
+    <div class="audio">
+      <div class="bg-container">
+        <img class="activeImg" src="https://s1.ax1x.com/2017/09/28/lof6H.jpg" />
+        <div class="shadow"></div>
+      </div>
       <header>
-        <span @click="hideAudio" class="iconfont">&#xe697;</span>
-        <span>{{name}}</span>
+        <span @click="hideAudio"><i class="iconfont">&#xe697;</i></span>
+        <span>{{privileges[activeIndex].name}}</span>
+        <span></span>
       </header>
       <!--container-->
 
+      <div class="cover-container">
+        <div class="cover">
+          <img src="https://s1.ax1x.com/2017/09/28/l7EPf.png" width="100%"/>
+        </div>
+      </div>
 
       <!--audio control-->
       <div class="control">
@@ -13,26 +23,58 @@
           <p id="starTime">0:00</p>
     			<p id="line"><span class="activeLine"></span></p>
           <p id="endTime"></p>
-          <audio src="/static/media/leave.84f5c2a.mp3"  @canplay="changeTime" @timeupdate="activeTime" id="audio">
+          <audio v-bind:src="privileges[activeIndex].url"  @canplay="changeTime" @timeupdate="activeTime" id="audio">
             <source src="song.ogg" type="audio/ogg">
             <source src="song.m4a" type="audio/mpeg">
             <source src="song.mp3" type="audio/mpeg">
           </audio>
         </div>
         <div class="btnControl">
-          <button type="button" style="padding:.35rem .5rem;font-size:.5rem" @click="playAudio">播放</button>
+          <span @click="playAudio" class="iconfont">&#xe608;</span>
         </div>
       </div>
     </div>
 </template>
 <script>
+import leave from '@/assets/music/leave.mp3'
   export default {
     data () {
       return {
-        transitionName:'slide-left'
+        transitionName:'slide-left',
+        isPlay:'',
+        activeImg:{
+          background:'url(https://s1.ax1x.com/2017/09/28/lof6H.jpg) no-repeat',
+          backgroundSize:'200%',
+          backgroundPosition:'center'
+        },
+        privileges:[{
+          name:'leave this pleace',
+          author:'LIONE - Leave This Place',
+          url:leave,
+          img:'https://s1.ax1x.com/2017/09/28/lof6H.jpg'
+        },
+        {
+          name:'Unbreakable(Original Mix)',
+          author:'Hyper Potions/Danyka Nadeau',
+          url:'',
+          img:'http://p1.music.126.net/fjjCx4Kr__TJ84INHNf2Ig==/1415071472294134.jpg?param=130y130'
+        },
+        {
+          name:'小半',
+          author:'陈粒',
+          url:'',
+          img:'http://p1.music.126.net/HQxTggMCB7AHUXN-ZFEtmA==/1371091013186741.jpg?param=130y130'
+        },
+        {
+          name:'All I See',
+          author:'Draper/Laura Brehm - All I See',
+          url:'',
+          img:'http://p1.music.126.net/YqLRQK5yx283Te-f5EuVlg==/1366692966298773.jpg?param=130y130'
+        }
+      ]
       }
     },
-    props:['url','name','author'],
+    props:['activeIndex'],
     mounted(){
 
     },
@@ -89,6 +131,23 @@
   }
 </script>
 <style scoped="">
+.audio{
+  height: 100%;
+}
+.shadow{
+  height: 100%;
+  width: 10rem;
+  background: rgba(0,0,0,.35);
+  backdrop-filter: blur(130px);
+}
+.bg-container{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 10rem;
+  z-index: -1
+}
 .audio header{
   width: 9.8rem;
   padding: .35rem .1rem;
@@ -100,14 +159,36 @@
   justify-content: center;
   align-items: center;
 }
-.audio header span:first-child{
+.audio header span{
+  color: white;
   width:1.5rem;
+}
+.audio header span i{
+  padding-left: .3rem
+}
+.activeImg{
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+
 }
 .audio header span:nth-child(2){
   width: 8rem;
+  text-align: center;
 }
 .audio header .iconfont{
   font-size: .45rem !important
+}
+.cover-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 14rem;
+}
+.cover{
+  width: 7rem;
+  height: 7rem;
 }
 .showTime{
   display: flex;
@@ -126,6 +207,7 @@
   background:#f14b4b;
   display: block;
   border-radius: 1px;
+  width: 0;
 }
 #starTime,#endTime{
   width: 1.5rem;
