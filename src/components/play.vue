@@ -3,6 +3,11 @@
       <div class="bg-container">
         <img class="activeImg" src="https://s1.ax1x.com/2017/09/28/lof6H.jpg" />
         <div class="shadow"></div>
+        <div class="cover-container">
+          <div class="cover">
+            <img src="https://s1.ax1x.com/2017/09/28/l7EPf.png" width="100%"/>
+          </div>
+        </div>
       </div>
       <header>
         <span @click="hideAudio"><i class="iconfont">&#xe697;</i></span>
@@ -11,11 +16,6 @@
       </header>
       <!--container-->
 
-      <div class="cover-container">
-        <div class="cover">
-          <img src="https://s1.ax1x.com/2017/09/28/l7EPf.png" width="100%"/>
-        </div>
-      </div>
 
       <!--audio control-->
       <div class="control">
@@ -140,6 +140,12 @@ import leave from '@/assets/music/leave.mp3'
   background: rgba(0,0,0,.35);
   backdrop-filter: blur(130px);
 }
+.control{
+  position: fixed;
+  bottom:0;
+  left: 0;
+  padding: .5rem 0
+}
 .bg-container{
   position: absolute;
   top: 0;
@@ -147,6 +153,9 @@ import leave from '@/assets/music/leave.mp3'
   height: 100%;
   width: 10rem;
   z-index: -1
+}
+.btnControl .iconfont{
+  color: white
 }
 .audio header{
   width: 9.8rem;
@@ -171,7 +180,6 @@ import leave from '@/assets/music/leave.mp3'
   position: absolute;
   top: 0;
   left: 0;
-
 }
 .audio header span:nth-child(2){
   width: 8rem;
@@ -181,14 +189,18 @@ import leave from '@/assets/music/leave.mp3'
   font-size: .45rem !important
 }
 .cover-container{
+  position: absolute;
+  /* color: black; */
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 10rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 14rem;
 }
 .cover{
-  width: 7rem;
-  height: 7rem;
+  width: 6.5rem
 }
 .showTime{
   display: flex;
