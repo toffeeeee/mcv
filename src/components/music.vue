@@ -39,7 +39,9 @@
       <!--music list end-->
     </div>
       <div class="audio-container" @touchmove.prevent>
-        <play :activeIndex='activeIndex' :listLength="listLength"></play>
+        <keep-alive>
+          <play :activeIndex='activeIndex' :listLength="listLength"></play>
+        </keep-alive>
       </div>
     <!--audio end-->
   </div>

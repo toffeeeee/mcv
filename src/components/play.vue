@@ -1,7 +1,7 @@
 <template>
     <div class="audio">
       <div class="bg-container">
-        <img class="activeImg" src="https://s1.ax1x.com/2017/09/28/lof6H.jpg" />
+        <img class="activeImg" v-bind:src="privileges[nowPlayIndex].img" />
         <div class="shadow"></div>
         <div class="cover-container">
           <div class="cover" v-bind:class="{rotate:isPlay}">
