@@ -27,7 +27,7 @@
         </div>
         <div class="music-list">
           <div  v-for="(item,index) in privileges" class="item"
-           @click="ShowAudio(index)">
+           @click="ShowAudio(index,privileges.length)">
             <div>{{index + 1}}</div>
             <div class="detail">
               <p>{{item.name}}</p>
@@ -39,7 +39,7 @@
       <!--music list end-->
     </div>
       <div class="audio-container" @touchmove.prevent>
-        <play :activeIndex='activeIndex'></play>
+        <play :activeIndex='activeIndex' :listLength="listLength"></play>
       </div>
     <!--audio end-->
   </div>
@@ -144,7 +144,7 @@
 }
 .play-all p i{
   font-size: .55rem;
-  vertical-align: bottom;
+  vertical-align: baseline;
 }
 .play-all p:first-child,.item div:first-child{
   width: 1.35rem;
@@ -176,6 +176,7 @@ export default {
       titleValue:'Music',
       transitionName:'slide-left',
       activeIndex:'',
+      listLength:'',
       playlist:[{
         coverImgUrl:'',
       }],
@@ -220,9 +221,10 @@ export default {
     },
 
     //
-    ShowAudio:function(index){
+    ShowAudio:function(index,length){
       var elem = document.getElementsByClassName('audio-container')[0];
       this.activeIndex = index ;
+      this.listLength = length ;
       elem.style.left = 0;
     },
 
