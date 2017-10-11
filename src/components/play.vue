@@ -117,7 +117,7 @@
           const endTime = document.getElementById('endTime');
           endTime.innerText = this.getEndTime();
           line.style.width = 0 ;
-          this.playAudio();;
+          this.playAudio();
       },
 
       //播放下一首
@@ -127,13 +127,17 @@
         }else{
           this.nowPlayIndex = this.nowPlayIndex + 1 ;
         }
-        this.playAudio();
+        var audio =document.querySelector('#audio');
+        this.isPlay = true ;
+        audio.play();
       },
 
       //播放上一首
       prevPlay:function(){
         this.nowPlayIndex = this.nowPlayIndex - 1 < 0 ? this.listLength - 1 : this.nowPlayIndex - 1 ;
-        this.playAudio();
+        var audio =document.querySelector('#audio');
+        this.isPlay = true ;
+        audio.play();
       },
 
       //播放进度
