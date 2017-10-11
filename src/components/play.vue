@@ -122,18 +122,20 @@
 
       //播放下一首
       nextPlay:function () {
+        var audio =document.querySelector('#audio');
         if(this.nowPlayIndex + 1 == this.listLength){
           this.nowPlayIndex = 0 ;
         }else{
           this.nowPlayIndex = this.nowPlayIndex + 1 ;
         }
-        this.play();
+        audio.play();
       },
 
       //播放上一首
       prevPlay:function(){
+          var audio =document.querySelector('#audio');
         this.nowPlayIndex = this.nowPlayIndex - 1 < 0 ? this.listLength - 1 : this.nowPlayIndex - 1 ;
-        this.play();
+        audio.play();
       },
 
       //播放进度
