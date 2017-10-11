@@ -117,26 +117,23 @@
           const endTime = document.getElementById('endTime');
           endTime.innerText = this.getEndTime();
           line.style.width = 0 ;
-          this.play();
+          this.playAudio();;
       },
 
       //播放下一首
       nextPlay:function () {
-        var audio =document.querySelector('#audio');
         if(this.nowPlayIndex + 1 == this.listLength){
           this.nowPlayIndex = 0 ;
         }else{
           this.nowPlayIndex = this.nowPlayIndex + 1 ;
         }
-        alert(this.nowPlayIndex);
-        audio.play();
+        this.playAudio();
       },
 
       //播放上一首
       prevPlay:function(){
-          var audio =document.querySelector('#audio');
         this.nowPlayIndex = this.nowPlayIndex - 1 < 0 ? this.listLength - 1 : this.nowPlayIndex - 1 ;
-        audio.play();
+        this.playAudio();
       },
 
       //播放进度
