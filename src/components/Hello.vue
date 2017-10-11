@@ -3,7 +3,7 @@
     <div class="wapper"  v-bind:class="{activeLeft:isActive}">
       <app-header @toggle="change"></app-header>
       <div class="container">
-          <img src="https://raw.githubusercontent.com/1iekkas/cv/gh-pages/doc/static/img/avatar.a86f92c.jpg">
+          <img src="../assets/avatar.jpg">
           <h1>{{msg}}</h1>
       </div>
     </div>

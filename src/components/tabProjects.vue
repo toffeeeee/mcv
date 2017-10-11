@@ -39,19 +39,24 @@ export default {
     return {
       Projects:[{
         name:'ProjectName',
-        imgUrl:'http://storage1.imgchr.com/V7Dl6.jpg',
+        imgUrl:'https://s1.ax1x.com/2017/10/11/8ZAHJ.png',
         content:'ProjectDetailContent : 1 line '
       },
       {
         name:'ProjectName',
-        imgUrl:'http://storage1.imgchr.com/V7Dl6.jpg',
+        imgUrl:'https://s1.ax1x.com/2017/10/11/8ZkB4.png',
         content:'ProjectDetailContent : 1 line '
       },
       {
         name:'ProjectName',
-        imgUrl:'http://storage1.imgchr.com/V7Dl6.jpg',
+        imgUrl:'https://s1.ax1x.com/2017/10/11/8ZFuF.png',
         content:'ProjectDetailContent : 1 line '
       },
+      {
+        name:'ProjectName',
+        imgUrl:'https://s1.ax1x.com/2017/10/11/8Zagf.png',
+        content:'ProjectDetailContent : 1 line '
+      }
       ]
     }
   }

@@ -52,8 +52,11 @@
   height: 100%;
   overflow-x: hidden;
 }
+.music .wapper {
+  height: 100% !important ;
+}
 .audio-container{
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 10rem;
   height: 100%;

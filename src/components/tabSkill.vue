@@ -16,7 +16,7 @@
       <div class="content">
         <p>{{items.content}}</p>
         <p>{{items.detail}}</p>
-        <p v-for="i in items.Proficiency"><span>Proficiency:</span><span class="line" v-bind:style="{width:i.width}"></span><span>{{i.num}}</span></p>
+        <p v-for="i in items.Proficiency"><span>Proficiency:</span><span class="line" v-setWidth="i.num"></span><span>{{i.num}}</span></p>
       </div>
     </div>
   </div>
@@ -190,14 +190,22 @@ export default {
     swiperSlide
   },
   computed: {
+    swiper() {
+      return this.$refs.mySwiper.swiper;
+    }
+  },
+  mounted () {
+    //这边就可以使用swiper这个对象去使用swiper官网中的那些方法
+    this.swiper.slideTo(0, 0, false);
+  },
+  methods: {
 
-            swiper() {
-              return this.$refs.mySwiper.swiper;
-            }
-        },
-        mounted () {
-            //这边就可以使用swiper这个对象去使用swiper官网中的那些方法
-            this.swiper.slideTo(0, 0, false);
-        }
+  },
+  directives: {
+    setWidth: function (el,num) {
+      //console.log(num.value)
+      el.style.width = ( num.value.replace("%","") / 100 * 4 ) + 'rem' ;
+     }
+  }
 }
 </script>
