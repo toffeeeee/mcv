@@ -128,12 +128,14 @@
           this.nowPlayIndex = this.nowPlayIndex + 1 ;
         }
         this.playMusic();
+        this.changeTime();
       },
 
       //播放上一首
       prevPlay:function(){
         this.nowPlayIndex = this.nowPlayIndex - 1 < 0 ? this.listLength - 1 : this.nowPlayIndex - 1 ;
         this.playMusic();
+        this.changeTime();
       },
 
       //播放进度
