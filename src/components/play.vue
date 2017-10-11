@@ -95,9 +95,9 @@
       playAudio:function () {
         var audio =document.querySelector('#audio');
         if(audio.paused) {
-            this.play();
+            this.playMusic();
         } else {
-            this.pause();
+            this.pauseMusic();
         }
       },
 
@@ -117,7 +117,7 @@
           const endTime = document.getElementById('endTime');
           endTime.innerText = this.getEndTime();
           line.style.width = 0 ;
-          this.playAudio();
+          this.playMusic();
       },
 
       //播放下一首
@@ -127,17 +127,13 @@
         }else{
           this.nowPlayIndex = this.nowPlayIndex + 1 ;
         }
-        var audio =document.querySelector('#audio');
-        this.isPlay = true ;
-        audio.play();
+        this.playMusic();
       },
 
       //播放上一首
       prevPlay:function(){
         this.nowPlayIndex = this.nowPlayIndex - 1 < 0 ? this.listLength - 1 : this.nowPlayIndex - 1 ;
-        var audio =document.querySelector('#audio');
-        this.isPlay = true ;
-        audio.play();
+        this.playMusic();
       },
 
       //播放进度
@@ -154,14 +150,14 @@
       },
 
       //开始播放
-      play:function () {
+      playMusic:function () {
         var audio =document.querySelector('#audio');
         this.isPlay = true ;
         audio.play();
       },
 
       //暂停播放
-      pause:function () {
+      pauseMusic:function () {
         var audio =document.querySelector('#audio');
         this.isPlay = false ;
         audio.pause();
