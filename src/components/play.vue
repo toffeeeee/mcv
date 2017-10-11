@@ -128,6 +128,7 @@
         }else{
           this.nowPlayIndex = this.nowPlayIndex + 1 ;
         }
+        alert(this.nowPlayIndex);
         audio.play();
       },
 
